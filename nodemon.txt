@@ -1,0 +1,5 @@
+Instale o nodemon
+npm i -g nodemon
+
+Execute como adm no Power Shell
+Set-ExecutionPolicy RemoteSigned

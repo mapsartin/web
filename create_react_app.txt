@@ -1,0 +1,4 @@
+
+npx create-react-app funcionarios
+cd funcionarios
+npm start

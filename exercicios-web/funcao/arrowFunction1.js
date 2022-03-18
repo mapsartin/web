@@ -10,9 +10,9 @@ dobro = a => 2 * a // return implícito
 console.log(dobro(Math.PI))
 
 let ola = function () {
-    return 'Olá'
+    return 'Olá1'
 }
 
-ola = () => 'Olá'
-ola = _ => 'Olá' // possui um param
+ola = () => 'Olá2'
+ola = _ => 'Olá3' // possui um param
 console.log(ola())

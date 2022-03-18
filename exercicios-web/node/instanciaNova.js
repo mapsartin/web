@@ -7,3 +7,18 @@ module.exports = () => {
         }
     }
 }
+
+// module.exports = {
+//     valor: 1,
+//     inc() {
+//         this.valor++
+//     }
+// }
+
+// function criarProduto(nome, preco) {
+//     return {
+//         nome,
+//         preco,
+//         desconto: 0.1
+//     }
+// }

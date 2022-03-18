@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios </title>
+    <style>
+        #conteudo{
+            padding: 30px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Exercícios HTML
+    </header>
+    <nav>
+        <!-- <a href="exercicios/teste.html"> 00 - teste </a> <br>
+        <a href="exercicios/temp.html"> 01 - temp </a> <br> -->
+        <a href mas-nav="exercicios/teste.html"> 00 - teste </a> <br>
+        <a href mas-nav="exercicios/temp.html"> 01 - temp </a> <br>
+        <a href mas-nav="exercicios/texto1.html"> 02 - Texto1 </a> <br>
+        <a href mas-nav="exercicios/texto2.html"> 03 - Texto2 </a> <br>
+        <a href mas-nav="exercicios/listas.html"> 04 - Listas </a> <br>
+        <a href mas-nav="exercicios/listaAninhada.html"> 04 - Lista Aninhada </a> <br>
+        <a href mas-nav="exercicios/links.html"> 05 - Links </a> <br>
+        <a href mas-nav="exercicios/tabela.html"> 06 - Tabelas </a> <br>
+        <a href mas-nav="form/form.html"> 07 - Formulário </a> <br>
+        <a href mas-nav="form/form1.html"> 07 - Formulário1 </a> <br>
+        <a href mas-nav="exercicios/imagens.html"> 08 - Imagens </a> <br>
+    </nav>
+    <section id = "conteudo">
+
+    </section>
+    <footer>
+        Curso de Web Moderno
+    </footer>
+    <script>
+        // document.querySelectorAll('a').forEach(link => {
+        document.querySelectorAll('[mas-nav]').forEach(link => {
+            // console.log(link)
+            link.onclick = function(e){
+                e.preventDefault()
+                const conteudo = document.getElementById('conteudo')
+                // console.log('Ação !!')
+                // fetch(link.href)
+                fetch(link.getAttribute('mas-nav'))
+                .then(resp => resp.text())
+                .then(html => conteudo.innerHTML = html)
+        }})
+    </script>
+</body>
+</html>
