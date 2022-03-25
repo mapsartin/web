@@ -1,0 +1,61 @@
+	<h1>Slide Show</h1>
+
+<body>
+
+<ul id="sliders">
+
+<li class="slider-active"><img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" /></li>
+
+<li><img src="/exercicios-web/html1/img/loading.gif" /></li>
+
+<li><img src="http://files.cod3r.com.br/curso-web/imagem3.png" /></li>
+
+<li><img src="http://files.cod3r.com.br/curso-web/imagem4.jpg" /></li>
+
+	</ul>
+
+	<style>
+        /* li {
+        position: absolute;
+        display: none;
+    } */
+    </style>
+	<script>
+
+
+    // var sliders = document.querySelectorAll('#slider-active');
+    var currentPositionSlide = 0;
+    var endPositionSlider = sliders.length - 1;
+
+    // window.setInterval(function () {
+    //     var lastPositionSlide = currentPositionSlide ? (currentPositionSlide - 1) : endPositionSlide;
+    //     sliders[lastPositionSlide].class = '';
+    //     sliders[currentPositionSlide].class = 'slider-active';
+    //     currentPositionSlide = currentPositionSlide >= endPositionSlide ? 0 : currentPositionSlide + 1;
+    // }, 2000);
+
+    document.querySelectorAll('#slider-active').forEach(sliders => {
+        sliders.setInterval
+            const d = sliders.style.display
+            sliders.style.display = 'none'
+        }, 1000); 
+        
+                // var lastPositionSlide = currentPositionSlide ? (currentPositionSlide - 1) : endPositionSlide;
+                // console.log('TESTE CLICK..')                
+                // const img = parag.nextElementSibling
+                // console.log(ul)                
+                // const d = img.style.display
+                // img.style.display = 'block'
+                //img.style.display = d === 'none' ? 'block' : 'none'
+
+                // const d = sliders.style.display
+                // sliders[lastPositionSlide].class = '';
+                // sliders[currentPositionSlide].class = 'slider-active';
+                // sliders.style.display = 'block'
+                // sliders.style.display = d === 'none' ? 'block' : 'none'
+                // currentPositionSlide = currentPositionSlide >= endPositionSlide ? 0 : currentPositionSlide + 1;
+        //     }
+        // })
+
+</script>
+</body>

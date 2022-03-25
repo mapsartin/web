@@ -1,21 +1,24 @@
-<p>
-    <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="Muro da Cidade" width="513" heigh="342" title="Muro da cidade por Tarso...">
+<h1> Imagens Teste </h1>
+algo
+<p mas-img>
+    <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="Muro da Cidade" width="513" heigh="342"
+        title="Muro da cidade por Tarso...">
 </p>
 <p>
-    <img src="/exercicios-web/html1/img/loading.gif" alt="https://www.behance.net/gallery/31234507/Open-source-Loading-GIF-Icons-Vol-1/modules/199929399" title="Loading">
+    <img src="/exercicios-web/html1/img/loading.gif"
+        alt="https://www.behance.net/gallery/31234507/Open-source-Loading-GIF-Icons-Vol-1/modules/199929399"
+        title="Loading">
 </p>
 <p class="circular">
     <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="Imagem3" title="Teste 3" width="513" heigh="342">
 </p>
 <p class="texto">
-    <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" 
-    alt="Avatar" title="Outra" height="50" 
-    align="left">
-    Em linguística, a noção de texto é ampla e ainda 
-    aberta a uma definição mais precisa. Grosso modo, 
-    pode ser entendido como manifestação linguística 
-    das ideias de um autor, que serão interpretadas 
-    pelo leitor de acordo com seus conhecimentos 
+    <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar" title="Outra" height="50" align="left">
+    Em linguística, a noção de texto é ampla e ainda
+    aberta a uma definição mais precisa. Grosso modo,
+    pode ser entendido como manifestação linguística
+    das ideias de um autor, que serão interpretadas
+    pelo leitor de acordo com seus conhecimentos
     linguísticos e culturais. Seu tamanho é variável.
 
 </p>
@@ -23,24 +26,77 @@
 <p class="cidade">
 
 </p>
+<p>
+    <picture>
+        <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png" media="(min-width: 500px;">
+        <!-- Apresenta imagem com no minimo 600 px, senão vai para a próx -->
+
+        <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="logo">
+    </picture>
+</p>
 <style>
-    .circular{
+    p {
+        position: absolute;
+        display: none;
+    }
+
+    .circular {
         width: 513px;
         height: 342px;
         background-color: rgb(221, 221, 221);
     }
-    .texto{
+
+    .texto {
         width: 400px;
     }
-    .texto img{
+
+    .texto img {
         margin-right: 10px;
     }
-    .cidade{
-        width:513px;
+
+    .cidade {
+        width: 513px;
         height: 342px;
         background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
-        background-position:center ;
-        background-repeat: no-repeat ;
+        background-position: center;
+        background-repeat: no-repeat;
         background-size: 200%;
     }
 </style>
+
+<script>
+    // function slide1() {
+    //     document.getElementById('id').src = "http://files.cod3r.com.br/curso-web/imagem1.jpg";
+    //     setTimeout("slide2()", 1000)
+    // }
+
+    // function slide2() {
+    //     document.getElementById('id').src = "/exercicios-web/html1/img/loading.gif";
+    //     setTimeout("slide3()", 1000)
+    // }
+
+    // function slide3() {
+    //     document.getElementById('id').src = "http://files.cod3r.com.br/curso-web/imagem3.png";
+    //     setTimeout("slide4()", 1000)
+    // }
+
+    // function slide4() {
+    //     document.getElementById('id').src = "http://files.cod3r.com.br/curso-web/imagem4.jpg";
+    //     setTimeout("slide1()", 1000)
+    // }
+
+    // document.querySelectorAll('[mas-img]').forEach(parag => {
+    //         parag = function(e) {
+    //             // console.log('TESTE CLICK..')
+    //             const img = parag.nextElementSibling
+    //             // console.log(ul)
+    //             const d = img.style.display
+    //             img.style.display = 'block'
+    //             //img.style.display = d === 'none' ? 'block' : 'none'
+    //         }
+    //     })
+
+</script>
+<!-- <body onLoad="slide1()">
+    <img id="id">
+    </body> -->

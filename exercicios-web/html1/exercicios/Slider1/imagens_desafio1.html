@@ -1,0 +1,120 @@
+<!-- https://www.davidchc.com.br/tutoriais/criar-um-slideshow-com-javascript/ -->
+<!-- FUNCIONOU APENAS NO PREVIEW -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Slide Show</title>
+	
+	<style  type="text/css">
+	body{margin:0;}
+	header{display:block; background:#e5e5e5; border-bottom:2px solid #ccc; padding:20px 0;}
+	h1{font-size:25px; font-family:arial; text-align:center; margin:0; padding:0}
+	</style>
+	
+	<!--Chama o arquivo style.css -->
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Tutorial slideshow com javascript</h1>
+	</header>
+	<!-- Define a lista não ordenada com as imagens -->
+	<ul id="sliders">
+		<!-- 
+			Define uma classe no primeiro item, 
+			para garantir que será mostrado
+			ao acessar a página
+		-->
+		<li class="slider-active"><img src="images/slider-01.jpg" /></li>
+		<li><img src="images/slider-02.jpg" /></li>
+		<li><img src="images/slider-03.jpg" /></li>
+	</ul>
+	
+	<!--Chama o arquivo slider.js-->
+	<script src="slider.js"></script>
+</body>
+</html>
+
+    <style>
+        #sliders {
+            list-style: none;
+            /*Remove o bullet*/
+            position: relative;
+            /* Define que position:relative porque os elementos filhos usarão absolute */
+            width: 800px;
+            height: 300px;
+            margin: 0 auto;
+            /*Centralizar na horizontal*/
+            overflow: hidden;
+            /* Oculta os elementos que ultrapassarem as dimensões definidas */
+        }
+
+        #slider li {
+            /*Configuremos os itens do slide*/
+            position: absolute;
+            /*Definimos como posição absoluta, seguindo o elemento pai*/
+            top: 0;
+            /*Define que ficará encostado no topo*/
+            left: 0;
+            /*Define que ficará enconstado do lado esquerdo*/
+            opacity: 0;
+            /*Coloca a opacidade zero, pra ocultar*/
+            z-index: 0;
+            /*Define ordenação relacionados os elementos*/
+            -webkit-transition: opacity 1s;
+            /*Cria uma transição da opacidade com 1 segundo*/
+            -moz-transition: opacity 1s;
+            transition: opacity 1s;
+        }
+
+
+        #sliders li.slider-active {
+            /* Agora defiremos uma classeque mostrar o item atual */
+
+            z-index: 1;
+            /*Ordena que ficará a frente dos itens*/
+            opacity: 1;
+            /*Mostra o slide atual*/
+        }
+    </style>
+    <script>
+
+
+        var sliders = document.querySelectorAll('#slider-active');
+        var currentPositionSlide = 0;
+        var endPositionSlider = sliders.length - 1;
+
+        window.setInterval(function () {
+            var lastPositionSlide = currentPositionSlide ? (currentPositionSlide - 1) : endPositionSlide;
+            sliders[lastPositionSlide].class = '';
+            sliders[currentPositionSlide].class = 'slider-active';
+            currentPositionSlide = currentPositionSlide >= endPositionSlide ? 0 : currentPositionSlide + 1;
+        }, 2000);
+
+        // document.querySelectorAll('#slider-active').forEach(sliders => {
+        //     sliders.setInterval
+        //     const d = sliders.style.display
+        //     sliders.style.display = 'none'
+        // }, 1000);
+
+                // var lastPositionSlide = currentPositionSlide ? (currentPositionSlide - 1) : endPositionSlide;
+                // console.log('TESTE CLICK..')
+                // const img = parag.nextElementSibling
+                // console.log(ul)
+                // const d = img.style.display
+                // img.style.display = 'block'
+                //img.style.display = d === 'none' ? 'block' : 'none'
+
+                // const d = sliders.style.display
+                // sliders[lastPositionSlide].class = '';
+                // sliders[currentPositionSlide].class = 'slider-active';
+                // sliders.style.display = 'block'
+                // sliders.style.display = d === 'none' ? 'block' : 'none'
+                // currentPositionSlide = currentPositionSlide >= endPositionSlide ? 0 : currentPositionSlide + 1;
+        //     }
+        // })
+
+    </script>
+</body>
