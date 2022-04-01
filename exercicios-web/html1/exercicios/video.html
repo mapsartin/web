@@ -1,0 +1,47 @@
+<video id="meuVideo" width="800" height="450" controls autoplay controlslist="nodownload">
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    Seu navegador não suporta a tag vídeo.
+</video>
+
+<div mas-progresso="meuVideo" class="progresso">
+    <div></div>
+
+</div>
+
+<div>
+    <button mas-play="meuVideo" onclick="obterDuracao()">Play</button>
+    <button mas-pause="meuVideo">Pause</button>
+    
+</div>
+
+<style>
+    .progresso{
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444;
+        margin: 20px;
+    }
+    
+    .progresso > div{
+        background-color: red;
+        /* color: #fff; */
+        height: 100%;
+        text-align: right;
+        font-size: 14px;
+        width: 0%;
+    }
+</style>
+
+<script>
+function obterDuracao(){
+    let video = document.getElementsByTagName('meuVideo')
+    let duracao = Math.trunc(video.duration)
+    let segundos = Math.trunc(duracao % 60)
+    let minutos = Math.trunc((duracao % 3600) / 60)
+    let horas = Math.trunc(duracao / 3600)
+
+    console.log('teste')
+    console.log(`Duração: ${horas.toString().padStart(2,'0')} : ${minutos.toString().padStart(2,'0')} : ${segundos.toString().padStart(2,'0')} `)
+    console.log("Duração:" + horas.toString().padStart(2,'0') + ":" + minutos.toString().padStart(2,'0') + ":" + segundos.toString().padStart(2,'0'))
+}
+</script>
