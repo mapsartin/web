@@ -1,10 +1,11 @@
 <video id="meuVideo" width="800" height="450" controls autoplay controlslist="nodownload">
-    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    <!-- <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4"> -->
+    <source src="video/video.mp4" type="video/mp4">
     Seu navegador não suporta a tag vídeo.
 </video>
 
 <div mas-progresso="meuVideo" class="progresso">
-    <div></div>
+    <div id="barra"></div>
 
 </div>
 
@@ -13,7 +14,8 @@
     <button mas-pause="meuVideo">Pause</button>
     
 </div>
-
+<p id="duracao"></p>
+<p id="atual"></p>
 <style>
     .progresso{
         height: 20px;
@@ -33,15 +35,76 @@
 </style>
 
 <script>
-function obterDuracao(){
-    let video = document.getElementsByTagName('meuVideo')
-    let duracao = Math.trunc(video.duration)
-    let segundos = Math.trunc(duracao % 60)
-    let minutos = Math.trunc((duracao % 3600) / 60)
-    let horas = Math.trunc(duracao / 3600)
 
-    console.log('teste')
-    console.log(`Duração: ${horas.toString().padStart(2,'0')} : ${minutos.toString().padStart(2,'0')} : ${segundos.toString().padStart(2,'0')} `)
-    console.log("Duração:" + horas.toString().padStart(2,'0') + ":" + minutos.toString().padStart(2,'0') + ":" + segundos.toString().padStart(2,'0'))
+function obterDuracao(){
+    let video = document.getElementById('meuVideo')
+    let duracao = parseInt(video.duration)
+    let atual = parseInt(video.currentTime)
+
+    calcTempo(0, duracao)
+    calcTempo(1, atual)    
+    barraProg()
 }
+
+function calcTempo(sel, numseg){
+    let segundos = Math.floor(numseg % 60)
+    let minutos = Math.floor((numseg / 60) % 60)
+    let horas = Math.floor(numseg / 3600) % 24
+
+    if (sel == 0)
+        document.getElementById("duracao").innerHTML = "Duração = "+ horas + ":" + minutos + ":" + segundos
+    else
+        document.getElementById("atual").innerHTML = "Tempo Atual = "+ horas + ":" + minutos + ":" + segundos
+}
+
+function barraProg(){
+    let video = document.getElementById('meuVideo')
+    const elemento = document.getElementById('barra')
+    let duracao = parseInt(video.duration)
+    let atual = parseInt(video.currentTime)
+    const progresso = 100 * (atual/duracao)
+
+    elemento.style.display = 'block'
+    elemento.style.width = `${progresso}%`
+    
+    console.log(`${progresso}%`)
+}
+
+
+
+    
+
+    // let segundos = Math.floor(duracao % 60)
+    // let minutos = Math.floor((duracao / 60) % 60)
+    // let horas = Math.floor(duracao / 3600) % 24
+
+    // let seg = Math.floor(atual % 60)
+    // let min = Math.floor((atual / 60) % 60)
+    // let hor = Math.floor(atual / 3600) % 24
+
+    // let duracao = Math.trunc(video.duration)
+    // let segundos = Math.trunc(duracao % 60)
+    // let minutos = Math.trunc((duracao % 3600) / 60)
+    // let horas = Math.trunc(duracao / 3600)
+
+//     document.getElementById("posicao").innerHTML = "Posição atual "+vid.currentTime;
+//    document.getElementById("duracao").innerHTML = "Duração "+toHHMMSS(vid.duration);
+
+
+    // console.log('teste')
+    // console.log(`Duração: ${horas.toString().padStart(2,'0')} : ${minutos.toString().padStart(2,'0')} : ${segundos.toString().padStart(2,'0')} `)
+    // console.log("Duração:" + horas.toString().padStart(2,'0') + ":" + minutos.toString().padStart(2,'0') + ":" + segundos.toString().padStart(2,'0'))
+    // myFunction(minutos,segundos)
+
+
+
+//     function myFunction(elem, horas, minutos, segundos) {
+        
+//         document.getElementById("elem").innerHTML = "Duração = "+ horas + ":" + minutos + ":" + segundos;        
+// }
+
+
 </script>
+
+
+
