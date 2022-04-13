@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="video.css">
+
+
+<video id="meuVideo" width="800" height="450" controls autoplay controlslist="nodownload">
+    <source src="video.mp4" type="video/mp4">
+    Seu navegador não suporta a tag vídeo.
+</video>
+
+<div mas-progresso="meuVideo" class="progresso">
+    <div id="barra"></div>
+
+</div>
+
+<div>
+    <button mas-play="meuVideo" onclick="obterDuracao()">Play</button>
+    <button mas-pause="meuVideo">Pause</button>
+    
+</div>
+<p id="duracao"></p>
+<p id="atual"></p>
+
+
+
+
+<script src="video.js"></script>
+
+
+
