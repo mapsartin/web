@@ -1,0 +1,16 @@
+Crud
+
+1. Criar pasta backend
+2. npm init -y //dentro da pasta
+3. Criar db.json
+4. Criar dois registros
+5. Configurar Package.json "Start"
+6. Testar no browse
+7. Setar Politica de execução no power shell windows
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+8. Entrar em crud e executar create-react-app frontend
+9. Instalar dependencias no frontend:
+npm i --save axios bootstrap font-awesome react-router react-router-dom
+10. npm start
+11. criar arquivos css e jsx
+logo, header, nav, main, 

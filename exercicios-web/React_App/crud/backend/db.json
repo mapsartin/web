@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "name": "Maicon A. Sartin",
+      "email": "mapsartin@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "Fulano da Silva",
+      "email": "fsilva@gmail.com",
+      "id": 5
+    },
+    {
+      "name": "Beltrano dos Santos",
+      "email": "belsantos@gmail.com",
+      "id": 6
+    }
+  ]
+}

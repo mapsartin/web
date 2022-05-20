@@ -1,0 +1,30 @@
+ .navitem a {
+     /* Cada link na sua linha */
+     display: block;
+     text-decoration: none;
+     /* color: #FFF; */
+     color: var(--bg-dark);
+     font-weight: 300;
+     padding: 15px;
+ }
+
+ .navitem a:hover {
+     background: linear-gradient(135deg, #4259d6 0%, #6fd0f3 100%);
+ }
+
+ @media(max-width: 768px){
+    .navitem{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .navitem a{
+        display:inline;
+        padding: 10px;
+        margin: 0px;
+    }
+    .navitem{
+        height: 100%;
+        justify-content:space-around;
+    }
+}
