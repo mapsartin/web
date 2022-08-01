@@ -1,0 +1,24 @@
+Sequencia Projeto Express
+npm init -y
+npm i --save express
+Criar .gitignore
+criar index.js (Listen)
+npm i --save nodemon
+Alterar packetjson (script "test" p/ "start" : nodemon)
+npm i -g nodemon
+nodemon index.js
+npm run start ou npm start
+npm i --save pm2
+
+Alterar packetjson (script "production":"...")
+npm run production
+npm i -g pm2
+pm2 monit
+pm2 status
+pm2 show 0
+pm2 restart 0
+pm2 restart appx-backend
+pm2 stop 0
+pm2 kill
+Alterando index.js, com os tipos de requisições
+criando saudacao.js
